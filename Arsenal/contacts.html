@@ -5,12 +5,51 @@
     <title>
         Arsenal
     </title>
-
-    <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style type="text/css">
+          #arsenal_logo {
+    max-height: 30%;
+    max-width: 5%;
+    float: right;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+        h4 {
+            margin-top: 2vw
+        }
+
+        table {
+            margin-top: 2vw
+        }
+
+        .thumbnail {
+            position: relative;
+            padding: 0px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        .thumbnail img {
+            width: 100%;
+        }
+
+        .btn btn-default {
+            padding: inherit
+        }
     </style>
 </head>
 
@@ -49,78 +88,38 @@
                     </div>
                 </li>
             </ul>
-
-
-
         </div>
-
     </nav>
+<div style="margin-top: -5%; margin-right: 2%"><img id="arsenal_logo" src="http://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png"></div>
 
 
-    <!--
-        <nav style="position: fixed; width:100%;">
-            <div class="navbar">
-                <a href="#main">Main</a>
-                <a href="#matches">Admin</a>
-                <a href="#news">News</a>
-                <a href="#fans">Fans</a>
-                <a href="#home">Contacts</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Matches
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <img id="arsenal_logo" src="http://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png">
-            </div>
-        </nav>
--->
-    <content>
-        <div style="margin-top: -5%; margin-right: 2%"><img id="arsenal_logo" src="http://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png"></div>
-        <div class="content">
-            <div style="text-align: left">
-                <h1>SUPPORTERS CLUBS</h1>
-                <p>
-                    We are nothing without our fans and this section is dedicated to our loyal supporters across the globe.
 
-                    This is where you can join supporters clubs, follow Arsenal on social media, download exclusive wallpapers and vote for your player of the month
-                </p>
-                <p class="date">14/5/2018</p>
-                <p class="nickname"><b>MarkoPolo</b></p>
-                <hr>
-            </div>
-            <div style="text-align: left">
-                <h1>FANS FROM AFAR</h1>
-                <p>Discover the global support we receive and what Arsenal means to people from all walks of life
-                </p>
-                <p class="date">14/5/2018</p>
-                <p class="nickname"><b>Nickname</b></p>
-                <hr>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                        <div class="form-group" style="float: ">
+    <div class="container" style="margin-top: 10vw">
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12">
+                <div class="border border-dark">
+                    <center>
+                        <h3>Contacts</h3>
+                    </center>
+                    <h5>HEAD OFFICE SWITCHBOARD</h5>
+                    <p>020 7619 5003</p>
+                    <p>Monday to Friday (except Bank Holidays) 09.30 to 17.00.
 
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols=""></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <span></span>
-                        <button style="height: 30px; width: 60px">Send</button>
-                    </div>
+                        A matchday service is provided for all Home fixtures when the switchboard is open from 09.30am until 20 minutes after the end of the game.
+
+                        Please call the above number for all matchday issues.</p>
+
 
                 </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.06317138671875001%2C51.38142394852238%2C0.015792846679687503%2C51.576429447227135&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=12/51.4790/-0.0237">Переглянути більшу мапу</a></small>
             </div>
         </div>
-    </content>
-    <footer>Made in Ukraine</footer>
-
+    </div>
 </body>
+<footer>Made in Ukraine</footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
