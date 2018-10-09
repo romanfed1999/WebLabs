@@ -1,0 +1,20 @@
+CACHE MANIFEST
+
+#version 0.1
+
+index.html
+fans.html
+news.html
+matches.html
+contacts.html
+style.css
+css/bootstrap.min.css
+arsenal_everton.png
+emirates-stadium-1416679_1920.jpg
+http://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png
+jquery.js
+js/bootstrap.min.js
+637298374-612x612.jpg
+
+FALLBACK:
+admin.html error.html

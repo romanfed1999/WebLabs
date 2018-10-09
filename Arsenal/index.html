@@ -1,14 +1,22 @@
 <!Doctype html>
-<html>
+<html manifest="site.manifest">
 
 <head>
     <title>
         Arsenal
     </title>
-<link href="style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+    
     <style>
-        
+        #arsenal_logo {
+    max-height: 30%;
+    max-width: 5%;
+    float: right;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
         h1:before {
             content: "Introduction:"
         }
@@ -78,7 +86,7 @@
     </nav>
 
     <div style="margin-top: -5%; margin-right: 2%"><img id="arsenal_logo" src="http://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png"></div>
-    <content>
+    
         <p style="box-sizing:"><img src="/emirates-stadium-1416679_1920.jpg" style="max-width: 100%" max-height="100%"></p>
         <h2 style="text-align: left">History:</h2>
 
@@ -118,11 +126,11 @@
             <center>
                 <img src="arsenal_everton.png" style="max-width: 100%" max-height="100%"></center>
         </p>
-    </content>
+    
     <footer>Made in Ukraine</footer>
 
 </body>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script  
+src="jquery.js"></script>
+<script src="js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
