@@ -1,5 +1,5 @@
 <!Doctype html>
-<html manifest="site.manifest">
+<html>
 
 <head>
     <title>
@@ -8,38 +8,39 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <style type="text/css">
-          #arsenal_logo {
-    max-height: 30%;
-    max-width: 5%;
-    float: right;
-    animation-name: spin;
-    animation-duration: 5000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
+        #arsenal_logo {
+            max-height: 30%;
+            max-width: 5%;
+            float: right;
+            animation-name: spin;
+            animation-duration: 5000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
 
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
 
-    to {
-        transform: rotate(360deg);
-    }
+            to {
+                transform: rotate(360deg);
+            }
 
-}
+        }
     </style>
 </head>
 
 <body style="  word-spacing: 0.1em;
   margin: auto;
   padding-bottom: 2em;">
+
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-<ul class="navbar-nav">
+            <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link" href="/index.html">Home</a>
                 </li>
@@ -74,7 +75,6 @@
     </center>
     <div class="container">
         <div class="row">
-
             <div class="col-md-6">
                 <form>
                     <div class="form-group">
@@ -82,35 +82,58 @@
                         <input type="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                 </form>
-
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                <div class="form-group" style="float: ">
-
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" cols=""></textarea>
-                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <div class="form-group" style="float: ">
-
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols=""></textarea>
-                    <button type="submit" class="btn btn-primary" style="margin-top: 2vw">Publish</button>
+                    <textarea class="form-control" id="inputTitle" rows="1" cols="" onchange="getTitle();"></textarea>
                 </div>
             </div>
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-            
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="form-group" style="float: ">
+
+                    <textarea class="form-control" id="inputArticle" rows="10" cols="" onchange="getArticle();"></textarea>
+                    <button type="submit" class="btn btn-primary" id="button" style="margin-top: 2vw" onclick="publish();">Publish</button>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" id="test">
+
             </div>
         </div>
     </div>
     <footer style="margin-top: 10vw">Made in Ukraine</footer>
 </body>
-
-<script  
-src="jquery.js"></script>
+<script>
+    var title;
+    var article;
+    function getTitle(){
+        title = document.getElementById("inputTitle").value;
+    }
+    function getArticle(){
+        article = document.getElementById("inputArticle").value;
+    }
+    function publish(){
+        if(title != null && /\S/.test(title)){
+            if(article != null && /\S/.test(article)){
+               document.getElementById("inputTitle").value = "";
+            document.getElementById("inputArticle").value = "";
+                title = "";
+                article = "";
+            }
+            
+            else{
+                alert("invalid article");
+            }
+        }
+        else {
+            alert("invalid title");
+        }
+    }
+    </script>
+<script src="jquery.js"></script>
 <script src="js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

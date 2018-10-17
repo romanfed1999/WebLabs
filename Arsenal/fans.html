@@ -1,5 +1,5 @@
 <!Doctype html>
-<html manifest="site.manifest">
+<html>
 
 <head>
     <title>
@@ -77,8 +77,8 @@
     <content>
         <div style="margin-top: -5%; margin-right: 2%"><img id="arsenal_logo" src="http://icons.iconarchive.com/icons/giannis-zographos/english-football-club/256/Arsenal-FC-icon.png"></div>
         <div class="content">
-            <div style="text-align: left">
-                <h1>SUPPORTERS CLUBS</h1>
+            <div id="posts" style="text-align: left">
+                <h1>From fans:</h1>
                 <p>
                     We are nothing without our fans and this section is dedicated to our loyal supporters across the globe.
 
@@ -87,9 +87,7 @@
                 <p class="date">14/5/2018</p>
                 <p class="nickname"><b>MarkoPolo</b></p>
                 <hr>
-            </div>
-            <div style="text-align: left">
-                <h1>FANS FROM AFAR</h1>
+
                 <p>Discover the global support we receive and what Arsenal means to people from all walks of life
                 </p>
                 <p class="date">14/5/2018</p>
@@ -101,12 +99,12 @@
                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group" style="float: ">
 
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" cols=""></textarea>
+                            <textarea class="form-control" id="inputFans" rows="10" cols="" onchange="getStuff();"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <span></span>
-                        <button style="height: 30px; width: 60px">Send</button>
+                        <button style="height: 30px; width: 60px" onclick="postStuff();">Send</button>
                     </div>
 
                 </div>
@@ -114,8 +112,36 @@
         </div>
     </content>
     <footer>Made in Ukraine</footer>
-
 </body>
+<script>
+    var inputData;
+
+    function getStuff() {
+        inputData = document.getElementById("inputFans").value;
+    }
+
+    function currentDate() {
+        var d = new Date;
+    var dformat = [(d.getMonth()+1),
+               d.getDate(),
+               d.getFullYear()].join('/') +' ' +
+              [d.getHours(),
+               d.getMinutes(),
+               d.getSeconds()].join(':');
+        console.log(dformat);
+        return dformat;
+    }
+
+    function postStuff() {
+        var date = currentDate();
+        if (inputData != null && /\S/.test(inputData)) {
+            var data = "<p>" + inputData + "</p><p class=\"date\">" + date + "</p><p class=\"nickname\"><b>Nickname</b></p> <hr>";
+            document.getElementById("posts").innerHTML += data;
+            document.getElementById("inputFans").value = "";
+            inputData = "";
+        }
+    }
+</script>
 <script src="jquery.js"></script>
 <script src="js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
