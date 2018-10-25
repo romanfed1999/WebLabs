@@ -2,6 +2,8 @@ CACHE MANIFEST
 
 #version 0.1
 
+js/site_logic.js
+js/site_logic2.js
 index.html
 fans.html
 news.html

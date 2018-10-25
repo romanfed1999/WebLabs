@@ -87,7 +87,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <div class="form-group" style="float: ">
-                    <textarea class="form-control" id="inputTitle" rows="1" cols="" onchange="getTitle();"></textarea>
+                    <textarea class="form-control" id="inputTitle" rows="1" cols="" onchange="getNewsTitle();"></textarea>
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
             <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <div class="form-group" style="float: ">
 
-                    <textarea class="form-control" id="inputArticle" rows="10" cols="" onchange="getArticle();"></textarea>
+                    <textarea class="form-control" id="inputArticle" rows="10" cols="" onchange="getNewsBody();"></textarea>
                     <button type="submit" class="btn btn-primary" id="button" style="margin-top: 2vw" onclick="publish();">Publish</button>
                 </div>
             </div>
@@ -108,32 +108,33 @@
     <footer style="margin-top: 10vw">Made in Ukraine</footer>
 </body>
 <script>
-    var title;
-    var article;
-    function getTitle(){
-        title = document.getElementById("inputTitle").value;
-    }
-    function getArticle(){
-        article = document.getElementById("inputArticle").value;
-    }
-    function publish(){
-        if(title != null && /\S/.test(title)){
-            if(article != null && /\S/.test(article)){
-               document.getElementById("inputTitle").value = "";
-            document.getElementById("inputArticle").value = "";
-                title = "";
-                article = "";
-            }
-            
-            else{
-                alert("invalid article");
-            }
-        }
-        else {
-            alert("invalid title");
-        }
-    }
+//    var title;
+//    var article;
+//    function getTitle(){
+//        title = document.getElementById("inputTitle").value;
+//    }
+//    function getArticle(){
+//        article = document.getElementById("inputArticle").value;
+//    }
+//    function publish(){
+//        if(title != null && /\S/.test(title)){
+//            if(article != null && /\S/.test(article)){
+//               document.getElementById("inputTitle").value = "";
+//            document.getElementById("inputArticle").value = "";
+//                title = "";
+//                article = "";
+//            }
+//            
+//            else{
+//                alert("invalid article");
+//            }
+//        }
+//        else {
+//            alert("invalid title");
+//        }
+//    }
     </script>
+<script src="js/site_logic2.js"></script>
 <script src="jquery.js"></script>
 <script src="js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>

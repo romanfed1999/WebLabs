@@ -99,7 +99,7 @@
                     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                         <div class="form-group" style="float: ">
 
-                            <textarea class="form-control" id="inputFans" rows="10" cols="" onchange="getStuff();"></textarea>
+                            <textarea class="form-control" id="inputFans" rows="10" cols="" onchange="getFansStuff();"></textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -113,34 +113,7 @@
     </content>
     <footer>Made in Ukraine</footer>
 </body>
-<script>
-    var inputData;
-
-    function getStuff() {
-        inputData = document.getElementById("inputFans").value;
-    }
-
-    function currentDate() {
-        var d = new Date;
-    var dformat = [(d.getMonth()+1),
-               d.getDate(),
-               d.getFullYear()].join('/') +' ' +
-              [d.getHours(),
-               d.getMinutes(),
-               d.getSeconds()].join(':');
-        console.log(dformat);
-        return dformat;
-    }
-
-    function postStuff() {
-        var date = currentDate();
-        if (inputData != null && /\S/.test(inputData)) {
-            var data = "<p>" + inputData + "</p><p class=\"date\">" + date + "</p><p class=\"nickname\"><b>Nickname</b></p> <hr>";
-            document.getElementById("posts").innerHTML += data;
-            document.getElementById("inputFans").value = "";
-            inputData = "";
-        }
-    }
+<script src="js/site_logic.js">
 </script>
 <script src="jquery.js"></script>
 <script src="js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
