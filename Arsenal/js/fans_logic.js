@@ -2,7 +2,7 @@ var inputFansData;
 var inputNewsData;
 var inputNewsTitle;
 var inputNewsBody;
-var useLocalStorage = true;
+var useLocalStorage = false;
 
 function getFansStuff() {
     inputFansData = document.getElementById("inputFans").value;
@@ -56,13 +56,29 @@ function postStuff() {
     if (inputFansData != null && /\S/.test(inputFansData)) {
         var fansComment = new FansComment(inputFansData, date);
         if (window.navigator.onLine) {
-            var res = idb.select("CommentsTable", 1, function (isSelected, responseData) {
-                if (isSelected) {
-                    console.log(responseData);
-                } else {
-                    console.log("Error");
-                }
-            });
+//            var res = idb.select("CommentsTable", 1, function (isSelected, responseData) {
+//                if (isSelected) {
+//                    console.log(responseData);
+//                } else {
+//                    console.log("Error");
+//                }
+//            });
+            var data = {
+                comment: inputFansData
+            };
+
+            const userAction2 = async () => {
+                const response = await fetch('http://127.0.0.1:8000/comments', {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const myJson = await response.json(); 
+            }
+            userAction2();
+            postFansData(fansComment.getCommentBody());
         } else {
             saveFansDataLocaly(fansComment);
         }
@@ -367,3 +383,35 @@ idb = {
         }
     },
 };
+//------------------------
+
+
+const userAction = async () => {
+  const response = await fetch('http://127.0.0.1:8000/comments');
+  const myJson = await response.json(); //extract JSON from the 
+
+    
+var arrayLength = myJson.length;
+for (var i = 0; i < arrayLength; i++) {
+    console.log(myJson[i].comment);
+    comment = new FansComment(myJson[i].comment, currentDate())
+    postFansData(comment.getCommentBody());
+}
+  // do something with myJson
+}
+userAction();
+
+
+//var request = new XMLHttpRequest();
+//request.open('GET', '/news', true);
+//request.onload = function () {
+//
+//  // Begin accessing JSON data here
+//  var data = JSON.parse(this.response);
+//
+//}
+//
+//const data = await fetch('/news');
+//data();
+//
+//request.send();

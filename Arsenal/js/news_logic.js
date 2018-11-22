@@ -27,7 +27,22 @@ function publish() {
     if (inputNewsTitle !== null && inputNewsBody !== null && /\S/.test(inputNewsBody) && /\S/.test(inputNewsTitle)) {
         var data = "<div class=\"col-lg-3 col-md-3 col-sm-6 col-xs-12\"> <div class = \"thumbnail\"> <img src = \"637298374-612x612.jpg\" alt=\"Generic placeholder thumbnail\"> </div><div class = \"caption\"> <h3>" + inputNewsTitle + "</h3><p>" + inputNewsBody + "</p><a href = \"#\" class=\"btn btn-default\" role=\"button\">Read</a></div> </div>";
         if (window.navigator.onLine) {
-            //do smth(server emulation)
+            var data = {
+                title: inputNewsTitle,
+                body: inputNewsBody
+            };
+
+            const userAction2 = async () => {
+                const response = await fetch('http://127.0.0.1:8000/news', {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const myJson = await response.json(); 
+            }
+            userAction2();
         } else {
             if (useLocalStorage) {
                 saveNewsLocaly(data);
@@ -386,3 +401,17 @@ idb = {
         }
     },
 };
+
+const userAction = async () => {
+    const response = await fetch('http://127.0.0.1:8000/news');
+    const myJson = await response.json(); //extract JSON from the 
+
+
+    var arrayLength = myJson.length;
+    for (var i = 0; i < arrayLength; i++) {
+        news = new News(myJson[i].title, myJson[i].body)
+        postNews(news.getNewsData());
+    }
+    // do something with myJson
+}
+userAction();
