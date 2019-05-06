@@ -1,0 +1,4 @@
+:80 {
+    log /var/logs.log
+    root /var/www
+}
